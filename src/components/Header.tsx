@@ -1,6 +1,6 @@
-import { verifyAuth } from "@/lib/auth";
+import { verifyAuth } from "@/lib/lucia-auth";
 import { Nav, NavLink } from "./Nav";
-import { logout } from "@/app/(client)/actions/auth-actions";
+import { logout } from "@/actions/auth-actions";
 
 export default async function Header() {
   const result = await verifyAuth();
