@@ -16,6 +16,7 @@ export function SocialMediaAuthForm() {
     >
       <h2 className="text-2xl font-semibold mb-6 text-center">Login</h2>
       <div className="flex flex-col items-center">
+        <GoogleAuthButton />
         <GithubAuthButton />
         <div className="inline-flex items-center justify-center w-full">
           <hr className="w-3/4 h-px my-10 bg-gray-200 border-0" />

@@ -62,12 +62,7 @@ export function EmailAuthForm({ mode }: { mode: string }) {
         >
           {mode === "login" ? "Login" : "Create Account"}
         </button>
-        <button
-          type="submit"
-          className="mt-6 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-        >
-          {pending ? "Logging in" : "Submit"}
-        </button>
+
         {formState?.message && (
           <p className="text-sm text-red-500 mt-1">{formState?.message}</p>
         )}
