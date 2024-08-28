@@ -73,7 +73,7 @@ export async function signup(prevState: any, formData: FormData) {
   });
 
   const url = `${process.env.NEXT_PUBLIC_BASE_URL}/verify-email?token=${token}`;
-  console.log(url);
+
   await createAuthSession(user.id);
   redirect("/login");
 }
@@ -124,8 +124,11 @@ export async function auth(mode: string, prevState: any, formData: FormData) {
 }
 
 export async function logout() {
+  cookies().delete("google_code_verifier");
+  cookies().delete("google_oauth_state");
+  cookies().delete("github_oauth_state");
   await destroySession();
-  redirect("/");
+  redirect("/login");
 }
 
 export async function createGoogleAuthorizationURL() {

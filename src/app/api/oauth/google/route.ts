@@ -83,7 +83,7 @@ export async function GET(request: Request): Promise<Response> {
       }
     }
 
-    const loginUrl = new URL("/", process.env.NEXT_PUBLIC_BASE_URL!);
+    const loginUrl = new URL("/admin", process.env.NEXT_PUBLIC_BASE_URL!);
 
     return NextResponse.redirect(loginUrl, { status: 302 });
   } catch (e) {

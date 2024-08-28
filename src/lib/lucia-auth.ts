@@ -3,6 +3,7 @@ import { PrismaAdapter } from "@lucia-auth/adapter-prisma";
 import { Lucia, TimeSpan } from "lucia";
 import type { Session, User } from "lucia";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 const adapter = new PrismaAdapter(prisma.session, prisma.user);
 
@@ -87,4 +88,5 @@ export async function destroySession() {
     sessionCookie.value,
     sessionCookie.attributes
   );
+  return redirect("/login");
 }

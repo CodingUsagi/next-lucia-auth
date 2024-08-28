@@ -1,9 +1,7 @@
 "use client";
 
 import { login } from "@/actions/auth-actions";
-import Link from "next/link";
 import { useFormState } from "react-dom";
-import { ZodErrors } from "./ZodErrors";
 import { GoogleAuthButton } from "./GoogleAuthButton";
 import { GithubAuthButton } from "./GithubAuthButton";
 import { EmailAuthButton } from "./EmailAuthButton";
