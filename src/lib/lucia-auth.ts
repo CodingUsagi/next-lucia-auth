@@ -1,7 +1,6 @@
 import { prisma } from "@/db/db";
 import { PrismaAdapter } from "@lucia-auth/adapter-prisma";
 import { Lucia, TimeSpan } from "lucia";
-import type { Session, User } from "lucia";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
