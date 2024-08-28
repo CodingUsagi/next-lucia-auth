@@ -114,7 +114,10 @@ export async function login(prevState: any, formData: FormData) {
     };
 
   const res = await createAuthSession(existingUser.id);
-  redirect("/admin");
+
+  if (res.message === "successful") {
+    redirect("/admin");
+  }
 }
 
 export async function auth(mode: string, prevState: any, formData: FormData) {

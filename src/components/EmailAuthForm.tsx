@@ -2,15 +2,17 @@
 
 import { auth } from "@/actions/auth-actions";
 import Link from "next/link";
-import { useFormState, useFormStatus } from "react-dom";
 import { ZodErrors } from "./ZodErrors";
+import { useActionState } from "react";
 
 export function EmailAuthForm({ mode }: { mode: string }) {
-  const [formState, formAction] = useFormState(auth.bind(null, mode), {});
-  const { pending } = useFormStatus();
+  const [formState, formAction, isPending] = useActionState(
+    auth.bind(null, mode),
+    {}
+  );
 
-  if (pending) {
-    return <p>Loading...</p>;
+  if (isPending) {
+    return <p>Logging in...</p>;
   }
 
   return (
@@ -55,7 +57,6 @@ export function EmailAuthForm({ mode }: { mode: string }) {
             <ZodErrors error={formState?.zodErrors?.password} />
           </div>
         </div>
-
         <button
           type="submit"
           className="mt-6 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"

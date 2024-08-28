@@ -12,21 +12,25 @@
   "dependencies": {
     "@lucia-auth/adapter-prisma": "^4.0.1",
     "@prisma/client": "^5.16.0",
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc",
     "arctic": "^1.9.1",
     "bcrypt-ts": "^5.0.2",
     "jsonwebtoken": "^9.0.2",
     "lucia": "^3.2.0",
-    "next": "14.2.3",
+    "next": "^15.0.0-rc.0",
     "oslo": "^1.2.1",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "19.0.0-rc-7771d3a7-20240827",
+    "react-dom": "19.0.0-rc-7771d3a7-20240827",
     "zod": "^3.23.8"
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc"
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "postcss": "^8",

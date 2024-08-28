@@ -25,6 +25,8 @@ export async function createAuthSession(userId: string) {
     sessionCookie.value,
     sessionCookie.attributes
   );
+
+  return { message: "successful" };
 }
 
 export async function verifyAuth() {

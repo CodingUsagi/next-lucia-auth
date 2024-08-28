@@ -1,13 +1,17 @@
 "use client";
 
 import { login } from "@/actions/auth-actions";
-import { useFormState, useFormStatus } from "react-dom";
 import { GoogleAuthButton } from "./GoogleAuthButton";
 import { GithubAuthButton } from "./GithubAuthButton";
 import { EmailAuthButton } from "./EmailAuthButton";
+import { useActionState } from "react";
 
 export function SocialMediaAuthForm() {
-  const [formState, formAction] = useFormState(login, {});
+  const [formState, formAction, isPending] = useActionState(login, {});
+
+  if (isPending) {
+    return <p>Logging in...</p>;
+  }
 
   return (
     <form

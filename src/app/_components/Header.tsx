@@ -1,8 +1,8 @@
 import { verifyAuth } from "@/lib/lucia-auth";
-import { logout } from "@/actions/auth-actions";
 import Link from "next/link";
+import { LogOutForm } from "./LogOutForm";
 
-export async function HomeHeader() {
+export async function Header() {
   const result = await verifyAuth();
 
   return (
@@ -20,9 +20,7 @@ export async function HomeHeader() {
               </li>
             </div>
           ) : (
-            <form action={logout}>
-              <button>Log out</button>
-            </form>
+            <LogOutForm />
           )}
         </ul>
       </nav>
