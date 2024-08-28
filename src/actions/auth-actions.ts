@@ -102,7 +102,7 @@ export async function login(prevState: any, formData: FormData) {
 
   const { hashedPassword } = existingUser;
 
-  const isValidPassword = await compareSync(data.password, hashedPassword!);
+  const isValidPassword = compareSync(data.password, hashedPassword!);
 
   if (!isValidPassword)
     return {

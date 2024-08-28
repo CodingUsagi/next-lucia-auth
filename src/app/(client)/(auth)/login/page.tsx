@@ -1,9 +1,9 @@
-import { SociaMeduaAuthForm } from "@/components/SocialMediaAuthForm";
+import { SocialMediaAuthForm } from "@/components/SocialMediaAuthForm";
 
 export default function LoginPage() {
   return (
     <main className="flex items-center justify-center h-screen">
-      <SociaMeduaAuthForm />
+      <SocialMediaAuthForm />
     </main>
   );
 }

@@ -1,12 +1,12 @@
 "use client";
 
 import { login } from "@/actions/auth-actions";
-import { useFormState } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
 import { GoogleAuthButton } from "./GoogleAuthButton";
 import { GithubAuthButton } from "./GithubAuthButton";
 import { EmailAuthButton } from "./EmailAuthButton";
 
-export function SociaMeduaAuthForm() {
+export function SocialMediaAuthForm() {
   const [formState, formAction] = useFormState(login, {});
 
   return (
@@ -16,7 +16,6 @@ export function SociaMeduaAuthForm() {
     >
       <h2 className="text-2xl font-semibold mb-6 text-center">Login</h2>
       <div className="flex flex-col items-center">
-        <GoogleAuthButton />
         <GithubAuthButton />
         <div className="inline-flex items-center justify-center w-full">
           <hr className="w-3/4 h-px my-10 bg-gray-200 border-0" />
