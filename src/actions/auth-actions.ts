@@ -12,6 +12,8 @@ import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 import { prisma } from "@/db/db";
 
+const dynamic = "force-dynamic";
+
 const userSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email" }),
   password: z
@@ -111,7 +113,7 @@ export async function login(prevState: any, formData: FormData) {
       message: "Couldn'authenticate user, please try again!",
     };
 
-  await createAuthSession(existingUser.id);
+  const res = await createAuthSession(existingUser.id);
   redirect("/admin");
 }
 
